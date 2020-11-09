@@ -1,3 +1,20 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap');
+
+/* Define Css variables */
+:root {
+    --bg-black-100: #000000;
+    --bg-white-90: #dddddd;
+    --bg-white-50: #effad3;
+    --text-black-100: #000000;
+    --text-black-60: #555555;
+    --text-black-50: #666666;
+    --text-black-30: #bbbbbb;
+    --outer-shadow: 6px 6px 6px #d0d0d0, -6px -6px 6px #f8f8f8;
+    --outer-shadow-0: 0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
+    --inner-shadow: inset 6px 6px 6px #d0d0d0, inset -6px -6px 6px #f8f8f8;
+}
+
 /* Global Style */
 * {
     margin: 0;
@@ -5,10 +22,17 @@
     box-sizing: border-box;
     outline: none;
 }
-body {
+html {
     font-size: 16px;
     line-height: 1.5;
+}
+body {
     overflow-x: hidden;
+    background-color: var(--bg-white-50);
+}
+::not(i) {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
 }
 ::before, ::after {
     box-sizing: border-box;
@@ -37,10 +61,35 @@ img {
 .justify-content-between {
     justify-content: space-between;
 }
+.outer-shadow {
+    box-shadow: var(--outer-shadow);
+}
+.inner-shadow {
+    box-shadow: var(--inner-shadow);
+}
+.hover-in-shadow{
+    position: relative;
+    z-index: 1;
+}
+.hover-in-shadow:hover {
+    box-shadow: var(--outer-shadow-0);
+}
+.hover-in-shadow:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.hover-in-shadow:hover::after{
+    box-shadow: var(--inner-shadow);
+}
 
 /* Header Style */
 .header {
-    background-color: gray;
+    /* background-color: gray; */
     padding: 20px 15px;
     position: absolute;
     width: 100%;
@@ -50,12 +99,123 @@ img {
 }
 .header .logo a {
     display: inline-block;
+    text-align: center;
+    line-height: 44px;
+    font-size: 2rem;
     width: 50px;
     height: 50px;
-    background-color: violet;
+    color: var(--skin-color);
+    border-radius: 50%;
+    border: 3px solid var(--skin-color);
+    font-weight: 600;
+    text-transform: uppercase;
 }
 .header .hamburger-btn {
     width: 50px;
     height: 50px;
-    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.header .hamburger-btn::after {
+    border-radius: 50%;
+}
+.header .hamburger-btn span {
+    display: block;
+    height: 3px;
+    width: 22px;
+    background-color: var(--bg-black-100);
+    position: relative;
+}
+.header .hamburger-btn span::before,
+.header .hamburger-btn span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-black-100);
+}
+.header .hamburger-btn span::before {
+    top: -10px;
+}
+.header .hamburger-btn span::after {
+    top: 10px;
+}
+
+/* Navigation menu Style */
+.nav-menu {
+    position: fixed;
+    padding: 0 15px;
+    background-color: var(--bg-white-50);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+.nav-menu .close-nav-menu {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    line-height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--text-black-50)
+}
+.nav-menu .close-nav-menu::after {
+    border-radius: 50%;
+}
+.nav-menu .nav-menu-list {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-menu .nav-menu-list ul {
+    padding: 20px;
+}
+.nav-menu .nav-menu-list ul li {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.nav-menu .nav-menu-list ul li:last-child {
+    margin-bottom: 0;
+}
+.nav-menu .nav-menu-list ul li a {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--text-black-60);
+    padding: 5px 30px;
+    text-transform: capitalize;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+.nav-menu .nav-menu-list ul li a.active {
+    color: var(--skin-color);
+}
+.nav-menu .nav-menu-list ul li a:after {
+    border-radius: 30px;
+}
+
+.nav-menu .copyright-text {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    color: var(--text-black-50);
+    font-size: 20px;
 }

@@ -196,6 +196,28 @@ img {
         transform: translateX(30px);
     }
 }
+.section-title {
+    padding: 0 20px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-black-100);
+    text-transform: uppercase;
+    margin: 0;
+}
+.section-title h2::before {
+    content: attr(data-heading);
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--skin-color);
+}
 
 /* Header Style */
 .header {
@@ -378,4 +400,66 @@ img {
     width: 100%;
     border-radius: 50%;
     border: 10px solid transparent;
+}
+
+/* About section Style */
+.about-section {
+    padding: 80px 0;
+    min-height: 100vh;
+}
+.about-section .about-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    padding: 0 15px;
+}
+.about-section .about-img .img-box {
+    padding: 15px;
+    border-radius: 10px;
+}
+.about-section .about-img .img-box img {
+    width: 100%;
+    border: 10px solid transparent;
+    border-radius: 10px;
+}
+.about-section .about-img .social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+.about-section .about-img .social-links a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    color: var(--text-black-60);
+    margin: 0 6px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.about-section .about-img .social-links a::after {
+    border-radius: 50%;
+}
+.about-section .about-img .social-links a:hover {
+    color: var(--skin-color);
+}
+.about-section .about-img .social-links a i {
+    line-height: 50px;
+}
+.about-section .about-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+    padding: 0 15px;
+}
+.about-section .about-info p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 14px;
+    color: var(--text-black-60);
+}
+.about-section .about-info p span {
+    font-weight: 600;
+}
+.about-section .about-info .btn-1 {
+    margin: 30px 20px 0 0;
 }

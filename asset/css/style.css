@@ -529,3 +529,100 @@ img {
     color: var(--text-black-60);
     margin-top: -40px;
 }
+
+.about-section .experience,
+.about-section .education {
+    padding-bottom: 80px;
+}
+.about-section .timeline {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+}
+.about-section .timeline::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: var(--bg-white-90);
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.about-section .timeline .timeline-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+.about-section .timeline .timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 50px);
+    text-align: right;
+}
+.about-section .timeline .timeline-item:nth-child(even) {
+    padding-left: calc(50% + 50px);
+    text-align: left;
+}
+.about-section .timeline .timeline-item .timeline-item-inner{
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+}
+.about-section .timeline .timeline-item .timeline-item-inner::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: var(--bg-white-90);
+    top: 44px;
+    z-index: -1;
+}
+.about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner::before {
+    right: -30px;
+}
+.about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner::before {
+    left: -30px;
+}
+.about-section .timeline .timeline-item .timeline-item-inner .icon{
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--bg-white-90);
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: var(--skin-color);
+    background-color: var(--bg-white-50);
+    position: absolute;
+    top: 20px;
+}
+.about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner .icon{
+    right: -76px;
+}
+.about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner .icon{
+    left: -76px;
+}
+.about-section .timeline .timeline-item .timeline-item-inner span {
+    font-weight: 500;
+    color: var(--skin-color);
+    display: block;
+    margin: 0 0 20px;
+    text-transform: capitalize;
+}
+.about-section .timeline .timeline-item .timeline-item-inner h3 {
+    font-size: 20px;
+    color: var(--text-black-60);
+    font-weight: 600;
+    margin: 0 0 5px;
+    text-transform: capitalize;
+}
+.about-section .timeline .timeline-item .timeline-item-inner h4 {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-black-50);
+    margin: 0;
+}
+.about-section .timeline .timeline-item .timeline-item-inner p {
+    font-size: 16px;
+    color: var(--text-black-50);
+    line-height: 26px;
+    margin: 15px 0 0;
+}

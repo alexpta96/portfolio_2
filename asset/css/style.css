@@ -13,6 +13,7 @@
     --outer-shadow: 6px 6px 6px #d0d0d0, -6px -6px 6px #f8f8f8;
     --outer-shadow-0: 0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
     --inner-shadow: inset 6px 6px 6px #d0d0d0, inset -6px -6px 6px #f8f8f8;
+    --inner-shadow-0: inset 0 0 0 #d0d0d0, inset 0 0 0 #f8f8f8;
 }
 
 /* Global Style */
@@ -640,4 +641,70 @@ img {
     color: var(--text-black-50);
     line-height: 26px;
     margin: 15px 0 0;
+}
+
+/* Service section style */
+.services-section {
+    padding: 80px 0 80px;
+    min-height: 100vh;
+}
+.services-section .services-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.services-section .services-item .services-item-inner {
+    padding: 50px 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+}
+.services-section .services-item .services-item-inner .icon {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto 30px;
+    position: relative;
+}
+.services-section .services-item .services-item-inner .icon:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.services-section .services-item:hover .services-item-inner .icon {
+    box-shadow: var(--inner-shadow-0);
+}
+.services-section .services-item:hover .services-item-inner .icon:after {
+    box-shadow: var(--outer-shadow);
+}
+.services-section .services-item .services-item-inner .icon i {
+    font-size: 30px;
+    line-height: 100px;
+    transition: all 0.3s ease;
+}
+.services-section .services-item:hover .services-item-inner .icon i {
+    color: var(--skin-color);
+}
+.services-section .services-item .services-item-inner h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-black-60);
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+.services-section .services-item .services-item-inner p {
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-black-50);
+    margin: 0;
 }

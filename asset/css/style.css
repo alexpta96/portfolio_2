@@ -30,6 +30,7 @@ html {
 body {
     overflow-x: hidden;
     background-color: var(--bg-white-50);
+    /* overflow-y: hidden; */
 }
 ::not(i) {
     font-family: 'Roboto Slab', serif;
@@ -707,4 +708,277 @@ img {
     line-height: 26px;
     color: var(--text-black-50);
     margin: 0;
+}
+
+/* Portfolio Section Style */
+.portfolio-section {
+    padding: 80px 0 80px;
+    min-height: 100vh;
+}
+.portfolio-section .section-title {
+    margin-bottom: 40px;
+}
+.portfolio-section .portfolio-filter {
+    padding: 0 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.portfolio-section .portfolio-filter .filter-item {
+    display: inline-block;
+    margin: 0 5px 10px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-black-60);
+    text-transform: capitalize;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.portfolio-section .portfolio-filter .filter-item:hover:not(.active) {
+    opacity: 0.6;
+}
+.portfolio-section .portfolio-filter .filter-item.active {
+    color: var(--skin-color);
+}
+
+.portfolio-section .portfolio-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio-section .portfolio-item .portfolio-item-inner{
+    padding: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+.portfolio-section .portfolio-item .portfolio-item-inner .portfolio-item-img {
+    position: relative;
+}
+.portfolio-section .portfolio-item .portfolio-item-inner .portfolio-item-img img{
+    border-radius: 6px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.portfolio-section .portfolio-item .portfolio-item-inner:hover .portfolio-item-img img{
+    transform: translateY(-25px);
+}
+.portfolio-section .portfolio-item .portfolio-item-inner .portfolio-item-img .view-project{
+    /* display: none; */
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--skin-color);
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0;    
+    bottom: -6px;
+    transform: translateY(-6px);
+    z-index: -1;
+    opacity: 0;
+}
+.portfolio-section .portfolio-item .portfolio-item-inner:hover .portfolio-item-img .view-project{
+    transform: translateY(0);
+    opacity: 1;
+}
+.portfolio-section .portfolio-item .portfolio-item-inner p {
+    font-size: 16px;
+    margin: 15px 0 0;
+    text-align: center;
+    color: var(--text-black-60);
+    text-transform: capitalize;
+}
+.portfolio-section .portfolio-item .portfolio-item-details {
+    display: none;
+}
+
+/* Portfolio popup Style */
+.portfolio-popup {
+    background-color: var(--bg-white-50);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+}
+.portfolio-popup .popup-details {
+     max-width: 1200px ;
+    width: calc(80% + 30px);
+    margin: auto;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.portfolio-popup .popup-details .popup-details-inner {
+    padding: 30px 0;
+}
+.portfolio-popup .popup-details .popup-title {
+    padding: 0 15px;
+}
+.portfolio-popup .popup-details .popup-title h2 {
+    font-size: 30px;
+    color: var(--text-black-100);
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 0 0 6px;
+}
+.portfolio-popup .popup-details .popup-title p {
+    font-size: 14px;
+    color: var(--text-black-60);
+    font-weight: 600;
+    margin: 0 0 20px;
+    border-bottom: 2px solid var(--bg-white-90);
+    padding-bottom: 10px;
+}
+.portfolio-popup .popup-details .popup-title p span{
+    font-weight: 400;
+}
+.portfolio-popup .popup-project-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-black-60);
+    margin: 0 0 15px;
+    text-transform: capitalize;
+}
+.portfolio-popup .popup-details .description {
+    flex: 0 0 70%;
+    max-width: 70%;
+    padding: 0 15px;
+}
+.portfolio-popup .popup-details .description p {
+    font-size: 16px;
+    color: var(--text-black-50);
+    line-height: 26px;
+    margin: 0;
+}
+.portfolio-popup .popup-details .info {
+    flex: 0 0 30%;
+    max-width: 30%;
+    padding: 0 15px;
+}
+.portfolio-popup .popup-details .info ul li {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-black-50);
+    font-size: 16px;
+}
+.portfolio-popup .popup-details .info ul li span {
+    font-weight: 400;
+}
+.portfolio-popup .popup-details .info ul li:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-popup .separator {
+    width: 80%;
+    margin: auto;
+    height: 2px;
+    background-color: var(--bg-white-90);
+    display: block;
+}
+.portfolio-popup .popup-main {
+    min-height: 100vh;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio-popup .popup-main .popup-main-inner {
+    padding: 80px 0 60px;
+    position: relative;
+
+}
+.portfolio-popup .popup-img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 6px;
+}
+.portfolio-popup .popup-main .popup-main-inner .popup-project-details-btn {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--skin-color);
+    cursor: pointer;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+.portfolio-popup .popup-main .popup-main-inner .popup-project-details-btn::after {
+    border-radius: 30px;
+}
+.portfolio-popup .popup-main .popup-main-inner .popup-project-details-btn i {
+    margin-left: 6px;
+}
+.portfolio-popup .popup-main .popup-main-inner .popup-close-btn {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 35px;
+    color: var(--text-black-60);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.portfolio-popup .popup-main .popup-main-inner .popup-close-btn::after {
+    border-radius: 50%;
+}
+.portfolio-popup .popup-main .popup-main-inner .popup-counter {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: var(--text-black-60);
+
+}
+.portfolio-popup .prev-btn,
+.portfolio-popup .next-btn {
+    position: fixed;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1010;
+    color: var(--text-black-60);
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+.portfolio-popup .prev-btn:hover,
+.portfolio-popup .next-btn:hover {
+    opacity: 1;
+}
+.portfolio-popup .prev-btn i,
+.portfolio-popup .next-btn i {
+    line-height: 50px;
+}
+.portfolio-popup .prev-btn {
+    left: 20px;
+}
+.portfolio-popup .next-btn {
+    right: 20px;
 }

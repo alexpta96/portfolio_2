@@ -160,3 +160,51 @@ function bodyScrollToggle() {
 
 })();
 // End Portfolio Section
+
+// Start Feedback Slider
+(() => {
+    const sliderContainer = document.querySelector('.feedback-slider-container');
+    const slides = sliderContainer.querySelectorAll('.feedback-item');
+    const sliderWidth = sliderContainer.offsetWidth;
+    const prevBtn = document.querySelector('.feedback-slider-nav .prev');
+    const nextBtn = document.querySelector('.feedback-slider-nav .next');
+    let activeSlide = sliderContainer.querySelector('.feedback-item.active');
+    let slideIndex = Array.from(slides).indexOf(activeSlide);
+
+    // Set width for sliderContainer
+    sliderContainer.style.width = sliderWidth * slides.length +'px';
+
+    // Set width for all slides
+    slides.forEach(slide => {
+        slide.style.width = sliderWidth +'px';
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if(slideIndex === 0) {
+            slideIndex = slides.length - 1;
+        } else {
+            slideIndex--;
+        }
+        slider();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if(slideIndex === slides.length - 1) {
+            slideIndex = 0;
+        } else {
+            slideIndex++;
+        }
+        slider();
+    });
+
+    function slider() {
+        // Deactive existing active Slide
+        sliderContainer.querySelector('.feedback-item.active').classList.remove('active');
+        // Active new Slide
+        slides[slideIndex].classList.add('active');
+        sliderContainer.style.marginLeft = - (sliderWidth * slideIndex) + 'px';
+
+    }
+
+})();
+// End Feedback slider

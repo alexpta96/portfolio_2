@@ -1032,3 +1032,84 @@ img {
 .portfolio-popup .next-btn {
     right: 20px;
 }
+
+/* Feedback section style */
+.feedback-section {
+    padding: 80px 0 80px;
+    min-height: 100vh;
+}
+.feedback-section .feedback-box{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 0 15px;
+}
+.feedback-section .feedback-box .feedback-slider {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.feedback-section .feedback-box .feedback-slider-container {
+    display: flex;
+    transition: margin 1s ease;
+    align-items: center;
+}
+.feedback-section .feedback-box .feedback-item {
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+.feedback-section .feedback-box .feedback-item i {
+    position: absolute;
+    font-size: 30px;
+    color: var(--text-black-50);
+    opacity: 0.4;
+}
+.feedback-section .feedback-box .feedback-item i.left {
+    top: 10px;
+    left: 10px;
+}
+.feedback-section .feedback-box .feedback-item i.right {
+    bottom: 10px;
+    right: 10px;
+}
+.feedback-section .feedback-box .feedback-item p {
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-black-50);
+    margin: 0 0 30px;
+}
+.feedback-section .feedback-box .feedback-item img {
+    max-width: 70px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 50%;
+}
+.feedback-section .feedback-box .feedback-item span {
+    display: block;
+    margin: 10px 0 0;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-black-60);
+    text-transform: capitalize;
+}
+.feedback-section .feedback-box .feedback-slider-nav {
+    text-align: center;
+    margin:  30px 0 0;
+}
+.feedback-section .feedback-box .feedback-slider-nav span {
+    width: 50px;
+    height: 50px;
+    color: var(--skin-color);
+    display: inline-block;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+.feedback-section .feedback-box .feedback-slider-nav span::after {
+    border-radius: 50%;
+}
+.feedback-section .feedback-box .feedback-slider-nav span i {
+    line-height: 50px;
+}

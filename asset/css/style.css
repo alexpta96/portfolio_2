@@ -16,6 +16,21 @@
     --inner-shadow: inset 6px 6px 6px #d0d0d0, inset -6px -6px 6px #f8f8f8;
     --inner-shadow-0: inset 0 0 0 #d0d0d0, inset 0 0 0 #f8f8f8;
 }
+/* Override css style for dark theme */
+body.dark {
+    --bg-black-100: #ffffff;
+    --bg-white-90: #202020;
+    --bg-white-50: #2b2b2e;
+    --bg-white-opacity: rgba(44,42,45,0.5);
+    --text-black-100: #ffffff;
+    --text-black-60: #ffffff;
+    --text-black-50: #bbbbbb;
+    --text-black-30: #bbbbbb;
+    --outer-shadow: 6px 6px 6px #222327, -6px -6px 6px #363636;
+    --outer-shadow-0: 0 0 0 #222327, 0 0 0 #363636;
+    --inner-shadow: inset 6px 6px 6px #222327, inset -6px -6px 6px #363636;
+    --inner-shadow-0: inset 0 0 0 #222327, inset 0 0 0 #363636;
+}
 
 /* Global Style */
 * {
@@ -709,6 +724,7 @@ img {
     display: block;
     margin: 0 auto 30px;
     position: relative;
+    color: var(--text-black-60)
 }
 .services-section .services-item .services-item-inner .icon:after {
     content: '';

@@ -9,7 +9,12 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="./css/color-0.css" class="color-style" title="color-0" >
+    <link rel="stylesheet" href="./css/color-1.css" class="color-style" title="color-1" disabled>
+    <link rel="stylesheet" href="./css/color-2.css" class="color-style" title="color-2" disabled>
+    <link rel="stylesheet" href="./css/color-3.css" class="color-style" title="color-3" disabled>
+    <link rel="stylesheet" href="./css/color-4.css" class="color-style" title="color-4" disabled>
+    <link rel="stylesheet" href="./css/swicher-style.css">
 
     <title>Anh Dev</title>
 </head>
@@ -895,8 +900,28 @@
     </div>
     <!-- End portfolio popup -->
 
+    <!-- Start style switcher -->
+    <div class="style-switcher outer-shadow">
+        <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon outer-shadow hover-in-shadow">
+            <i class="fas"></i>
+        </div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-0" onclick="setColorStyle('color-0')"></span>
+            <span class="color-1" onclick="setColorStyle('color-1')"></span>
+            <span class="color-2" onclick="setColorStyle('color-2')"></span>
+            <span class="color-3" onclick="setColorStyle('color-3')"></span>
+            <span class="color-4" onclick="setColorStyle('color-4')"></span>
+        </div>
+    </div>
+    <!-- End style switcher -->
+
 
     <!-- Main JS -->
     <script src="./js/main.js"></script>
+    <script src="./js/style-switcher.js"></script>
 </body>
 </html>

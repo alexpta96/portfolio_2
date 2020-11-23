@@ -16,9 +16,18 @@ window.addEventListener('scroll', () => {
 // Theme colors
 const colorStyles = document.querySelectorAll('.color-style');
 
+if(localStorage.getItem('color') !== null) {
+    changeColor();
+}
+
 function setColorStyle(color) {
+    localStorage.setItem('color', color);
+    changeColor();
+}
+
+function changeColor() {
     colorStyles.forEach(style => {
-        if(color === style.title) {
+        if(localStorage.getItem('color') === style.title) {
             style.removeAttribute('disabled');
         } else {
             style.setAttribute('disabled', 'true');
@@ -29,15 +38,33 @@ function setColorStyle(color) {
 // Dark and light mode
 
 const dayNight = styleSwitcher.querySelector('.day-night');
-dayNight.addEventListener('click', () => {
-    dayNight.querySelector('i').classList.toggle('fa-sun');
-    dayNight.querySelector('i').classList.toggle('fa-moon');
-    document.body.classList.toggle('dark');
-});
-window.addEventListener('load', () => {
+
+function updateIcon() {
     if(document.body.classList.contains('dark')) {
-        dayNight.querySelector('i').classList.add('fa-sun');
-    } else {
+        dayNight.querySelector('i').classList.remove('fa-sun');
         dayNight.querySelector('i').classList.add('fa-moon');
+    } else {
+        dayNight.querySelector('i').classList.add('fa-sun');
+        dayNight.querySelector('i').classList.remove('fa-moon');
     }
-})
+}
+function changeTheme() {
+    if(localStorage.getItem('theme') != null) {
+        if(localStorage.getItem('theme') === 'light') {
+            document.body.classList.remove('dark');
+        } else {
+            document.body.classList.add('dark');
+        }
+    }
+    updateIcon();
+}
+dayNight.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if(document.body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+    changeTheme();
+});
+changeTheme();
